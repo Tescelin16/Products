@@ -1,5 +1,6 @@
 package com.products.dto;
 
+import com.products.entity.Producto;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,5 +12,12 @@ public class ProductoDto {
     private String descripcion;
     private Double precio;
     private String calidad;
-    
+
+    public ProductoDto(Producto producto) {
+        this.nombre = producto.getNombre();
+        this.descripcion = producto.getDescripcion();
+        this.precio = producto.getPrecio();
+        this.calidad = producto.getCalidad();
+    }
+    public ProductoDto(){}
 }

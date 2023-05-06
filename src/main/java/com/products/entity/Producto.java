@@ -1,5 +1,6 @@
 package com.products.entity;
 
+import com.products.dto.ProductoDto;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,5 +22,13 @@ public class Producto {
     private Double precio;
     private String calidad;
 
+    public Producto(ProductoDto productoDto) {
+     this.nombre = productoDto.getNombre();
+     this.descripcion = productoDto.getDescripcion();
+     this.precio = productoDto.getPrecio();
+     this.calidad = productoDto.getCalidad();
+    }
 
+    public Producto() {
+    }
 }
